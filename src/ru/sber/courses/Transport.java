@@ -12,7 +12,7 @@ public  class Transport {
         return mileage;
     }
     public float getAddInfo() {
-        return mileage;
+        return addInfo;
     }
 
 }
