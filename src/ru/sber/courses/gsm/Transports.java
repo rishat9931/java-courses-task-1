@@ -1,4 +1,4 @@
-package ru.sber.courses;
+package ru.sber.courses.gsm;
 
 import java.util.*;
 
