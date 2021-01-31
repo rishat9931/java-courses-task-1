@@ -25,7 +25,8 @@ public class ArrayUtils {
      */
     public void addItemIndex(int item, int index) {
         int[] newArr = Arrays.copyOf(arr, arr.length + 1);
-        if(checkArrIndex(index)) {
+        //при добавление в любое место, можем добавить в конец, поэтому считаем передаем index-1
+        if(checkArrIndex(index-1)) {
             boolean added = false;
             for (int i = 0; i < newArr.length; i++) {
                 if(i==index){

@@ -12,7 +12,7 @@ public class Array {
         arrayUtils.printArray();
 
         System.out.println("======= добавление в любое место ===========");
-        arrayUtils.addItemIndex(109, 2);
+        arrayUtils.addItemIndex(109, 0);
         arrayUtils.printArray();
 
         System.out.println("======= удаление элемента массива по индексу ===========");
