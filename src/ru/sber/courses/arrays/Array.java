@@ -12,15 +12,15 @@ public class Array {
         arrayUtils.printArray();
 
         System.out.println("======= добавление в любое место ===========");
-        arrayUtils.addItemIndex(109, 4);
+        arrayUtils.addItemIndex(109, 2);
         arrayUtils.printArray();
 
         System.out.println("======= удаление элемента массива по индексу ===========");
-        arrayUtils.removeItem(4);
+        arrayUtils.removeItem(0);
         arrayUtils.printArray();
 
         System.out.println("======= изменения значения по его индексу===========");
-        arrayUtils.changeItem(3245,2);
+        arrayUtils.changeItem(3245,3);
         arrayUtils.printArray();
 
         System.out.println("======= вывод длины массива ===========");

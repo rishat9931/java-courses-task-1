@@ -1,16 +1,13 @@
 package ru.sber.courses.arrays;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 public class ArrayUtils {
 
     private int[] arr = null;
-
     /**
      * Необходимо реализовать класс в конструктор которого передается целочисленный массив.
      */
-
     public ArrayUtils(int[] arr) {
         this.arr = arr;
     }
@@ -28,10 +25,7 @@ public class ArrayUtils {
      */
     public void addItemIndex(int item, int index) {
         int[] newArr = Arrays.copyOf(arr, arr.length + 1);
-        if(index>=newArr.length){
-            System.out.println("Невозможно добавить новый элемент, так как переданный индекс выходит за рамки массива. Массив не изменился!");
-        }
-        else{
+        if(checkArrIndex(index)) {
             boolean added = false;
             for (int i = 0; i < newArr.length; i++) {
                 if(i==index){
@@ -57,10 +51,7 @@ public class ArrayUtils {
      * удаление элемента массива по индексу
      * */
     public void removeItem(int index){
-        if(index>=arr.length){
-            System.out.println("Невозможно удалить элемент = "+index+" , так как переданный индекс выходит за рамки массива. Массив не изменился!");
-        }
-        else{
+        if(checkArrIndex(index)){
             int[] newArr = new int[arr.length-1];
             for (int i = 0; i < newArr.length; i++) {
                 if(i>=index){
@@ -79,15 +70,11 @@ public class ArrayUtils {
      * */
 
     public void changeItem(int item, int index){
-        if(index>=arr.length){
-            System.out.println("Невозможно изменить элемент = "+index+" , так как переданный индекс выходит за рамки массива. Массив не изменился!");
-        }
-        else {
+        if(checkArrIndex(index)) {
             int[] newArr = Arrays.copyOf(arr, arr.length);
             newArr[index] = item;
             this.arr = newArr;
         }
-
     }
     /**
      * функция вывода на экран всего массива
@@ -161,4 +148,11 @@ public class ArrayUtils {
 
     }
 
+    public boolean checkArrIndex(int index) {
+        boolean checked = index < arr.length;
+        if(!checked){
+            System.out.println("Невозможно изменить/добавить/удалить элемент = "+index+" , так как переданный индекс выходит за рамки массива. Массив не изменился!");
+        }
+        return checked;
+    }
 }
